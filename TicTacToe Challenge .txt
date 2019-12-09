@@ -1,0 +1,54 @@
+﻿TicTacToe Challenge:
+(This challenge is worth one quiz grade.)
+
+
+
+
+Directions:
+Use Visual Studio to create a program solving the given problem statement. Show your completed code to a learning fellow for credit. If you complete it outside of class, submit the .cpp file into brightspace for credit.
+
+
+Problem Statement: 
+Create a Tic Tac Toe program using I/O, branches, loops, vectors, and user defined functions.
+
+
+
+
+Grading Rubric:
+  20 pts - Structure (Setting up the main, it runs, need at least one user defined function)
+  15 pts - Displaying the Board (Display elements on the board, doesn’t have to be correct)
+  15 pts - Accepting and Handling User Input (Doesn't have to include error handling)
+  20 pts - Checking for a Winner (Single function to determine if there’s a winner)
+  30 pts - Fully Playable Game 
++10 pts - Add in a Computer Player
+110 pts
+
+
+
+
+Template:
+#include<iostream>
+#include<vector>
+
+
+using namespace std;
+
+
+int main()
+{
+        int boardSize = 3*3; //3x3
+        vector<char>> board(boardSize);
+
+
+        //Create the board
+        
+        //Main game loop
+                //Display board
+                //Take Input
+                //Update board
+                //Check for winner
+                //Switch turns OR Announce winner
+
+
+        return 0;
+}
