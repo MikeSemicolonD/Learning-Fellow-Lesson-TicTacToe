@@ -1,0 +1,25 @@
+﻿#include<iostream>
+#include<vector>
+
+
+using namespace std;
+
+
+int main()
+{
+        int boardSize = 3*3; //3x3
+        vector<char>> board(boardSize);
+
+
+        //Create the board
+        
+        //Main game loop
+                //Display board
+                //Take Input
+                //Update board
+                //Check for winner
+                //Switch turns OR Announce winner
+
+
+        return 0;
+}
