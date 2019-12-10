@@ -1,25 +1,141 @@
-﻿#include<iostream>
+#include<iostream>
 #include<vector>
-
 
 using namespace std;
 
+void DisplayBoard()
+{
+}
+
+void GetInputFromUser()
+{
+}
+
+void InitializeBoard()
+{
+}
+
+bool ThereIsAWinner()
+{
+}
 
 int main()
 {
-        int boardSize = 3*3; //3x3
-        vector<char>> board(boardSize);
+	int boardSize = 3 * 3; //3x3
+	bool isPlayerOnesTurn = true;
+	bool gameIsRunning = true;
+	vector<char> board(boardSize);
 
+	//Create the board
+	for (int i = 0; i < board.size(); i++)
+	{
+		board[i] = (i + 1) + '0';
+	}
 
-        //Create the board
+	//Main game loop
+	while (gameIsRunning)
+	{
+
+	        //Display board
+	        system("cls");
+
+	        for (int i = 0, colCount = 0; i < board.size(); i++)
+	        {
+		        cout << " " << board[i] << " ";
+
+		        if (colCount == 2 && i != board.size() - 1)
+		        {
+		        	cout << endl << "------------" << endl;
+		        	colCount = 0;
+		        }
+		        else
+		        {
+			        if (i != board.size() - 1)
+			        {
+			        	cout << "|";
+			        	colCount++;
+			        }
+		        }
+
+	        }
+		
+	        //Take Input
+	        while (true)
+	        {
+		        int input;
+
+		        cout << endl << endl << "Enter a space : ";
+		        cin >> input;
+
+		        //If in accepted range
+		        if (input > 0 && input < 10)
+		        {
+			        //If board index hasn't been used
+			        if (isdigit(board[input - 1]))
+			        {
+			        	//Update board
+			        	board[input - 1] = (isPlayerOnesTurn) ? 'X' : 'O';
+			        	break;
+			        }
+		        }
+	        }
+
+	        char targetChar = (isPlayerOnesTurn) ? 'X' : 'O';
+                bool ThereIsAWinner = false;
+                
+	        //Check for winner
+	        if (board[0] == targetChar && board[1] == targetChar && board[2] == targetChar)
+	        {
+                
+	        }
+	        else if (board[2] == targetChar && board[5] == targetChar && board[8] == targetChar)
+	        {
+                
+	        }
+	        else if (board[3] == targetChar && board[4] == targetChar && board[5] == targetChar)
+	        {
+                
+	        }
+	        else if (board[1] == targetChar && board[4] == targetChar && board[7] == targetChar)
+	        {
+                
+	        }
+	        else if (board[0] == targetChar && board[4] == targetChar && board[8] == targetChar)
+	        {
+                
+	        }
+	        else if (board[0] == targetChar && board[3] == targetChar && board[6] == targetChar)
+	        {
+                
+	        }
+	        else if (board[2] == targetChar && board[4] == targetChar && board[6] == targetChar)
+	        {
+                
+	        }
+	        else if (board[6] == targetChar && board[7] == targetChar && board[8] == targetChar)
+	        {
+                
+	        }
+	        else
+	        {
+                
+	        }
         
-        //Main game loop
-                //Display board
-                //Take Input
-                //Update board
-                //Check for winner
-                //Switch turns OR Announce winner
+		if (ThereIsAWinner)
+		{
+			//Announce winner
+			//DisplayBoard(board);
+			cout << endl << endl << ((isPlayerOnesTurn) ? "X's" : "O's") << " Wins!" << endl << endl;
+			gameIsRunning = false;
+		}
+		else
+		{	//Switch turns
+			isPlayerOnesTurn = !isPlayerOnesTurn;
+		}
+	}
 
+	cin.get();
+	cin.get();
 
-        return 0;
+	return 0;
 }
